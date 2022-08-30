@@ -58,6 +58,7 @@ Run a dAD method - required inputs include:
 ```
 python 1_dAD.py
 ```
+The output would contain the .csv files with dynamic calibration set sizes, mean compound similarities, mean target similarities, and the nonconf set with prediction regions for every confidence level.
 
 ## 2. SCKBA (baseline CP)
 
@@ -74,6 +75,7 @@ To compare the dAD approach with baseline studies, we need to compute normalisat
 `2_train_nc.py` computes normasation coefficients regarding the median distance and standard deviations from the training samples
 `2_train_xgb_err.py` builds an additional error model, which prediction of error is used as normalisation of nonconformity scores
 
+Output would contain one nonconf.csv file with prediction regions per confidene level for every of baseline approaches with different suffixes based on normalization type ['_err', '_dist', 'std'].
 
 ## 3. BENCHMARK
 Same as for the SCKBA dataset, dAD approach (and baseline approaches) could be tested over several benchmark datasets available at `https://drive.google.com/file/d/1yS8p-g_z9Tf6ucw6ey-AQnD_Et8e43tz/view?usp=sharing`, or:
