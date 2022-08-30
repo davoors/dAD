@@ -72,7 +72,7 @@ python 2_CP_baseline.py
 ### 2.2. Normalisation coefficients
 To compare the dAD approach with baseline studies, we need to compute normalisation coefficients as used in earlier studies.
 
-`2_train_nc.py` computes normasation coefficients regarding the median distance and standard deviations from the training samples
+`2_train_nc.py` computes normalisation coefficients regarding the median distance and standard deviations from the training samples
 `2_train_xgb_err.py` builds an additional error model, which prediction of error is used as normalisation of nonconformity scores
 
 Output would contain one nonconf.csv file with prediction regions per confidene level for every of baseline approaches with different suffixes based on normalization type ['_err', '_dist', 'std'].
