@@ -34,15 +34,15 @@ Datasets include:
 Create similarity matrices of test compounds and targets towards the training samples.
 
 ```
-python data_processing.py  
+python 1_data_processing.py  
 ```
 
 ### 1.3. Training
 Train XGBoost model on the training set; train an additional model in 10x10-fold CV mode to compute nonconformity scores of all training samples.
 
 ```
-python train_xgb.py 
-python train_xgb_cv.py
+python 1_train_xgb.py 
+python 1_train_xgb_cv.py
 ```
 
 
