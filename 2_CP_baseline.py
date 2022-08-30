@@ -116,6 +116,8 @@ for x in range(len(sx)):
         # B) DECIDE ON PREDICTION INTERVALS
         ts_nc.loc[i, 'y_pred'] = ts_prediction_90[i].mean()
         ts_nc.loc[i, 'abs_err'] = abs(ts_nc['affinity'][i] - ts_nc['y_pred'][i])
+        
+        # Shafer and Vovk (7)
         ts_nc.loc[i, '75_CI'] = abs(ts_prediction_75[i][0] - ts_prediction_75[i][1])/2
         ts_nc.loc[i, '80_CI'] = abs(ts_prediction_80[i][0] - ts_prediction_80[i][1])/2
         ts_nc.loc[i, '85_CI'] = abs(ts_prediction_85[i][0] - ts_prediction_85[i][1])/2
@@ -123,6 +125,7 @@ for x in range(len(sx)):
         ts_nc.loc[i, '95_CI'] = abs(ts_prediction_95[i][0] - ts_prediction_95[i][1])/2
         ts_nc.loc[i, '99_CI'] = abs(ts_prediction_99[i][0] - ts_prediction_99[i][1])/2
         
+        # Papadopoulos et al. (8)
         ts_nc.loc[i, '75_CI_err'] = (abs(ts_prediction_75[i][0] - ts_prediction_75[i][1])/2) / exp(log(abs(ts_ERR[i])))
         ts_nc.loc[i, '80_CI_err'] = (abs(ts_prediction_80[i][0] - ts_prediction_80[i][1])/2) / exp(log(abs(ts_ERR[i])))
         ts_nc.loc[i, '85_CI_err'] = (abs(ts_prediction_85[i][0] - ts_prediction_85[i][1])/2) / exp(log(abs(ts_ERR[i])))
@@ -130,6 +133,7 @@ for x in range(len(sx)):
         ts_nc.loc[i, '95_CI_err'] = (abs(ts_prediction_95[i][0] - ts_prediction_95[i][1])/2) / exp(log(abs(ts_ERR[i])))
         ts_nc.loc[i, '99_CI_err'] = (abs(ts_prediction_99[i][0] - ts_prediction_99[i][1])/2) / exp(log(abs(ts_ERR[i])))
 
+        # Papadopoulos et al. (9)
         ts_nc.loc[i, '75_CI_dist'] = (abs(ts_prediction_75[i][0] - ts_prediction_75[i][1])/2)/ (gamma + lambda_d)
         ts_nc.loc[i, '80_CI_dist'] = (abs(ts_prediction_80[i][0] - ts_prediction_80[i][1])/2)/ (gamma + lambda_d)
         ts_nc.loc[i, '85_CI_dist'] = (abs(ts_prediction_85[i][0] - ts_prediction_85[i][1])/2)/ (gamma + lambda_d)
@@ -137,6 +141,7 @@ for x in range(len(sx)):
         ts_nc.loc[i, '95_CI_dist'] = (abs(ts_prediction_95[i][0] - ts_prediction_95[i][1])/2)/ (gamma + lambda_d)
         ts_nc.loc[i, '99_CI_dist'] = (abs(ts_prediction_99[i][0] - ts_prediction_99[i][1])/2)/ (gamma + lambda_d)
         
+        # Papadopoulos et al. (10)
         ts_nc.loc[i, '75_CI_std'] = (abs(ts_prediction_75[i][0] - ts_prediction_75[i][1])/2)/ ksi_s
         ts_nc.loc[i, '80_CI_std'] = (abs(ts_prediction_80[i][0] - ts_prediction_80[i][1])/2)/ ksi_s
         ts_nc.loc[i, '85_CI_std'] = (abs(ts_prediction_85[i][0] - ts_prediction_85[i][1])/2)/ ksi_s
