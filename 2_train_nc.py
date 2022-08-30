@@ -6,7 +6,6 @@ from sklearn.metrics import mean_squared_error
 import random
 from nonconformist.cp import IcpRegressor
 from nonconformist.nc import NcFactory
-from scoring_metrics import rmse, mse, ci
 from math import exp, log
 
 c_space = pd.read_csv('./sckba/c_space.csv')
